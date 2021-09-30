@@ -24,9 +24,33 @@ public class RangeTest {
 	@Test
 	@DisplayName("ตัวเลขเริ่มต้น เป็น 1 , input = [1,5] , result = 1 ")
 	public void case03() {
-		MyRange range = new MyRange("(1,5]");
+		MyRange range = new MyRange("[1,5]");
 		int result = range.getStart();
 		assertEquals(1,result);
+	}
+
+	@Test
+	@DisplayName("ตัวเลขเริ่มต้น เป็น 1 , input = (1,5] , result = 2 ")
+	public void case04() {
+		MyRange range = new MyRange("(1,5]");
+		int result = range.getStart();
+		assertEquals(2,result);
+	}
+
+	@Test
+	@DisplayName("ตัวเลขสุดท้าย เป็น ], input = (1,5] , result = true ")
+	public void case05() {
+		MyRange range = new MyRange("(1,5]");
+		boolean result = range.endWithInclude();
+		assertTrue(result);
+	}
+
+	@Test
+	@DisplayName("ตัวเลขสุดท้าย เป็น ], input = (1,5) , result = false ")
+	public void case06() {
+		MyRange range = new MyRange("(1,5)");
+		boolean result = range.endWithInclude();
+		assertFalse(result);
 	}
 
 }
