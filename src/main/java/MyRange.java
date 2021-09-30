@@ -27,9 +27,6 @@ public class MyRange {
 		return this.input.endsWith(")");
 	}
 
-	public boolean startWithExclude() {
-		return this.input.endsWith("(");
-	}
 
 	public int getEnd(){
 		int result = Integer.parseInt(this.input.substring(3,4));
@@ -45,5 +42,11 @@ public class MyRange {
 			result += i + ",";
 		}
 		return result.substring(0,result.length()-1);
+	}
+
+	public void validate() {
+		if (!input.startsWith("[") || !input.startsWith("(")) {
+			throw new InputInvalidException("Input error");
+		}
 	}
 }
