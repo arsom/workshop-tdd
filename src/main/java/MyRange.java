@@ -30,4 +30,20 @@ public class MyRange {
 	public boolean startWithExclude() {
 		return this.input.endsWith("(");
 	}
+
+	public int getEnd(){
+		int result = Integer.parseInt(this.input.substring(3,4));
+		if(endWithExclude()){
+			return result -1;
+		}
+		return result;
+	}
+
+	public String getRange() {
+		String result = "";
+		for(int i = getStart() ; i<=getEnd();i++){
+			result += i + ",";
+		}
+		return result.substring(0,result.length()-1);
+	}
 }
