@@ -53,4 +53,14 @@ public class RangeTest {
 		assertFalse(result);
 	}
 
+	@Test
+	@DisplayName("ตัวเลขสุดท้าย เป็น ), input = (1,5) , result = true ")
+	public void case07() {
+		MyRange range = new MyRange("(1,5)");
+		boolean result = range.endWithExclude();
+		assertFalse(result);
+	}
+
+
+
 }

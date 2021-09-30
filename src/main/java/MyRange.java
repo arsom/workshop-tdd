@@ -22,4 +22,12 @@ public class MyRange {
 	public boolean endWithInclude() {
 		return this.input.endsWith("]");
 	}
+
+	public boolean endWithExclude() {
+		return this.input.endsWith(")");
+	}
+
+	public boolean startWithExclude() {
+		return this.input.endsWith("(");
+	}
 }
